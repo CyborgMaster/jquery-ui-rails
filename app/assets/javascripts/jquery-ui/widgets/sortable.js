@@ -282,18 +282,18 @@ return $.widget( "ui.sortable", $.ui.mouse, {
 				$( "<style>*{ cursor: " + o.cursor + " !important; }</style>" ).appendTo( body );
 		}
 
+	  if ( o.zIndex ) { // zIndex option
+	    if ( this.helper.css( "zIndex" ) ) {
+	      this._storedZIndex = this.helper.css( "zIndex" );
+	    }
+	    this.helper.css( "zIndex", o.zIndex );
+	  }
+
 		if ( o.opacity ) { // opacity option
 			if ( this.helper.css( "opacity" ) ) {
 				this._storedOpacity = this.helper.css( "opacity" );
 			}
 			this.helper.css( "opacity", o.opacity );
-		}
-
-		if ( o.zIndex ) { // zIndex option
-			if ( this.helper.css( "zIndex" ) ) {
-				this._storedZIndex = this.helper.css( "zIndex" );
-			}
-			this.helper.css( "zIndex", o.zIndex );
 		}
 
 		//Prepare scrolling
